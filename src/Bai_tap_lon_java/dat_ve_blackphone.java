@@ -213,7 +213,9 @@ public class dat_ve_blackphone extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new dat_ve_blackphone().setVisible(true);
+                dat_ve_blackphone datVe = new dat_ve_blackphone();
+                datVe.setLocationRelativeTo(null);
+                datVe.setVisible(true);
             }
         });
     }
