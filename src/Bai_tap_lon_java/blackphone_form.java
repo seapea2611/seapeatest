@@ -91,6 +91,11 @@ public class blackphone_form extends javax.swing.JFrame {
         kButton1.setText("Đặt vé");
         kButton1.setkHoverEndColor(new java.awt.Color(204, 204, 255));
         kButton1.setkHoverStartColor(new java.awt.Color(255, 255, 255));
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
         kGradientPanel1.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
 
         kButton2.setText("Quay lại");
@@ -134,6 +139,12 @@ public class blackphone_form extends javax.swing.JFrame {
         cnu.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_kButton2ActionPerformed
+
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+        // TODO add your handling code here:
+        new dat_ve_blackphone().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_kButton1ActionPerformed
 
     /**
      * @param args the command line arguments
