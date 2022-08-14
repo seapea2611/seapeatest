@@ -3,15 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Bai_tap_lon_java;
-
-
-
 /**
  *
  * @author seape
  */
 public class chuc_nang_user extends javax.swing.JFrame {
-
     /**
      * Creates new form chuc_nang_user
      */
@@ -203,63 +199,70 @@ public class chuc_nang_user extends javax.swing.JFrame {
         // TODO add your handling code here:
         jurassic_form jura = new jurassic_form();
         jura.setVisible(true);
-        
-        
+        dispose();
     }//GEN-LAST:event_jurrasic_buttonActionPerformed
 
     private void blackphone_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blackphone_buttonActionPerformed
         // TODO add your handling code here:
         blackphone_form blphone = new blackphone_form();
         blphone.setVisible(true);
+        dispose();
     }//GEN-LAST:event_blackphone_buttonActionPerformed
 
     private void emvatrinh_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emvatrinh_buttonActionPerformed
         // TODO add your handling code here:
         emvatrinh_form evatrinh = new emvatrinh_form();
         evatrinh.setVisible(true);
-        
+        dispose();
     }//GEN-LAST:event_emvatrinh_buttonActionPerformed
 
     private void nobita_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nobita_buttonActionPerformed
         // TODO add your handling code here:
         nobita_form nobi = new nobita_form();
         nobi.setVisible(true);
+        dispose();
     }//GEN-LAST:event_nobita_buttonActionPerformed
 
     private void lightyear_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lightyear_buttonActionPerformed
         // TODO add your handling code here:
         lightyear_form liyear = new lightyear_form();
-        liyear.setVisible(true);      
+        liyear.setVisible(true);  
+        dispose();
     }//GEN-LAST:event_lightyear_buttonActionPerformed
 
     private void topgun_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_topgun_buttonActionPerformed
         // TODO add your handling code here:
         topgunmaverick_form tgmave = new topgunmaverick_form();
         tgmave.setVisible(true);
+        dispose();
     }//GEN-LAST:event_topgun_buttonActionPerformed
 
     private void maika_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maika_buttonActionPerformed
         // TODO add your handling code here:
         maika_form maka = new maika_form();
         maka.setVisible(true);
+        dispose();
     }//GEN-LAST:event_maika_buttonActionPerformed
 
     private void maguong_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maguong_buttonActionPerformed
         // TODO add your handling code here:
         maguong_form mguong = new maguong_form();
         mguong.setVisible(true);
+        dispose();
     }//GEN-LAST:event_maguong_buttonActionPerformed
 
     private void broker_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_broker_buttonActionPerformed
         // TODO add your handling code here:
         broker_form bro = new broker_form();
         bro.setVisible(true);
+        dispose();
     }//GEN-LAST:event_broker_buttonActionPerformed
 
     private void thor_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thor_buttonActionPerformed
         // TODO add your handling code here:
         thor_form th = new thor_form();
         th.setVisible(true);
+        dispose();
     }//GEN-LAST:event_thor_buttonActionPerformed
 
     /**

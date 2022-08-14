@@ -4,8 +4,9 @@
  */
 package Bai_tap_lon_java;
 
+import java.util.Date;
 import javax.swing.JOptionPane;
-
+import ket_noi_sql.InsertMySQL;
 /**
  *
  * @author seape
@@ -78,12 +79,6 @@ public class sign_up extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("SỐ ĐIỆN THOẠI");
         kGradientPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
-
-        taikhoan_text.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                taikhoan_textActionPerformed(evt);
-            }
-        });
         kGradientPanel1.add(taikhoan_text, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 170, 30));
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -125,15 +120,19 @@ public class sign_up extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void taikhoan_textActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_taikhoan_textActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_taikhoan_textActionPerformed
-
     private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
         // TODO add your handling code here:
         if(mk_text.getText().equals(xacnhan_text.getText())) {
-        xacnhan_dangky xndky = new xacnhan_dangky();
-        xndky.setVisible(true);}
+            String hoten = hoten_text.getText();
+            String diachi = diachi_text.getText();
+            String mk = mk_text.getText();
+            String tk = taikhoan_text.getText();
+            String sdt = sdt_text.getText();
+            Date ngaysinh = jDateChooser1.getDate();
+            xacnhan_dangky xndky = new xacnhan_dangky();
+            java.sql.Date sqlDate = new java.sql.Date(ngaysinh.getTime());
+            InsertMySQL.insertUser(tk, mk, hoten, diachi, sqlDate, sdt);
+            xndky.setVisible(true);}
         else {
             JOptionPane.showMessageDialog(null, "Hãy kiểm tra lại mật khẩu");
         }

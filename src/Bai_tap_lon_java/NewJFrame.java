@@ -6,9 +6,9 @@ package Bai_tap_lon_java;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 
@@ -18,20 +18,16 @@ import javax.swing.Timer;
  */
 public class NewJFrame extends javax.swing.JFrame {
     
-     private final String[] image = {"number4.jpg","thor_big.jpg","blphone_big.jpg","doctorstrange.png"};
-     
-     private static int index = 0;
-     
-     private Timer ChangeImageTimer;
-
+    static String taiKhoan;
+    private final String[] image = {"number4.jpg","thor_big.jpg","blphone_big.jpg","doctorstrange.png"};
+    private static int index = 0; 
+    private Timer ChangeImageTimer;
     /**
      * Creates new form NewJFrame
      */
     
     public NewJFrame() {
         initComponents();
-        
-        
         lblabel.setIcon(new ImageIcon("D:\\New Folder\\Bai_tap_lon_java\\src\\Bai_tap_lon_java\\icon_baitap\\"+image[index]));
         ChangeImageTimer = new Timer(3000,new ActionListener(){
            @Override
@@ -45,8 +41,6 @@ public class NewJFrame extends javax.swing.JFrame {
         ChangeImageTimer.start();
     }
     
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,7 +54,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        taiKhoanTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jCheckBox1 = new javax.swing.JCheckBox();
@@ -90,8 +84,8 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel1.setText("Username");
         kGradientPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
 
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(0, 0, 0)));
-        kGradientPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 180, 50));
+        taiKhoanTextField.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(0, 0, 0)));
+        kGradientPanel1.add(taiKhoanTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 180, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         jLabel4.setText("password");
@@ -104,11 +98,6 @@ public class NewJFrame extends javax.swing.JFrame {
         jCheckBox1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jCheckBox1ItemStateChanged(evt);
-            }
-        });
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
             }
         });
         kGradientPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, -1, -1));
@@ -152,11 +141,6 @@ public class NewJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
     private void jCheckBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox1ItemStateChanged
         // TODO add your handling code here:
         if(jCheckBox1.isSelected()) {
@@ -169,7 +153,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void dangnhap_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dangnhap_buttonActionPerformed
         // TODO add your handling code here:
-        
+        String tai_khoan = taiKhoanTextField.getText();
+        taiKhoan = tai_khoan;
+        String mat_khau = new String(jPasswordField1.getPassword());
+        if(SelectMySQL.checkUser(tai_khoan, mat_khau) == 1){
+            dispose();
+            new chuc_nang_user().setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Bạn đã nhập sai tài khoản hoặc mật khẩu\n" 
+            + "Vui lòng đăng nhập lại!");
+        }
     }//GEN-LAST:event_dangnhap_buttonActionPerformed
 
     /**
@@ -217,9 +211,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private com.k33ptoo.components.KButton kButton2;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private javax.swing.JLabel lblabel;
+    private javax.swing.JTextField taiKhoanTextField;
     // End of variables declaration//GEN-END:variables
 }
