@@ -14,7 +14,7 @@ import javax.swing.*;
 public class admin extends javax.swing.JFrame {
 
     
-    private String username = "admin";
+    private String username = "admin123";
     private char[] password = {'1','2','3','4'};
     
     /**
