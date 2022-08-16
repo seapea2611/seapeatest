@@ -7,7 +7,6 @@ package Bai_tap_lon_java;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -88,7 +87,7 @@ public class NewJFrame extends javax.swing.JFrame {
         kGradientPanel1.add(taiKhoanTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 180, 50));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
-        jLabel4.setText("password");
+        jLabel4.setText("Password");
         kGradientPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
 
         jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 3, 0, new java.awt.Color(0, 0, 0)));
@@ -133,6 +132,11 @@ public class NewJFrame extends javax.swing.JFrame {
         kButton2.setkForeGround(new java.awt.Color(0, 0, 0));
         kButton2.setkHoverEndColor(new java.awt.Color(255, 51, 51));
         kButton2.setkHoverStartColor(new java.awt.Color(255, 255, 0));
+        kButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton2ActionPerformed(evt);
+            }
+        });
         kGradientPanel1.add(kButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, 170, -1));
 
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 0, 541, 710));
@@ -165,6 +169,12 @@ public class NewJFrame extends javax.swing.JFrame {
             + "Vui lòng đăng nhập lại!");
         }
     }//GEN-LAST:event_dangnhap_buttonActionPerformed
+
+    private void kButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new sign_up().setVisible(true);
+    }//GEN-LAST:event_kButton2ActionPerformed
 
     /**
      * @param args the command line arguments

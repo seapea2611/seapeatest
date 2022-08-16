@@ -1,4 +1,4 @@
-package ket_noi_sql;
+package Bai_tap_lon_java;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -11,22 +11,25 @@ package ket_noi_sql;
  */
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 public class UpdateMySQL {
-    public static void update() {
-        String sqlUpdate = "UPDATE table2 " + "SET Hoten = ? " + "WHERE ID = ?";
+    
+    public static void deleteRow(String tai_khoan, String ID_phim, String ngay_dat, String ID_ghe) {
+        //int ans =0;
+        String sqlUpdate = "DELETE from luot_dat_ve " + "WHERE tai_khoan = ? AND "  
+                + "ID_phim = ? AND " + "ngay_dat = ? AND" + " ID_ghe = ?";
         try(Connection conn = MySQLJDBCUtil.getConnection();
             PreparedStatement pstmt = conn.prepareStatement(sqlUpdate)){
-                    String ID = " minh11";
-                    String hoten = "Hoang Cam";
-                    pstmt.setString(1, hoten);
-                    pstmt.setString(2, ID);
+                    pstmt.setString(1, tai_khoan);
+                    pstmt.setString(2, ID_phim);
+                    pstmt.setString(3, ngay_dat);
+                    pstmt.setString(4, ID_ghe);
                     int rowAffected = pstmt.executeUpdate();
+                    //if(rowAffected == 1) ans =1;
     }catch (SQLException ex){
-        System.out.println(ex.getMessage());
-    }  
+        System.out.println(ex.getMessage());  
+        }  
     }
 
     /**
@@ -34,6 +37,6 @@ public class UpdateMySQL {
      * @param args
      */
     public static void main(String[] args){
-        update();     
+        //update();     
 }
 }

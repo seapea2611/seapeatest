@@ -3,6 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Bai_tap_lon_java;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author seape
@@ -46,6 +51,7 @@ public class chuc_nang_user extends javax.swing.JFrame {
         thor_button = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        kButton1 = new com.k33ptoo.components.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -190,6 +196,16 @@ public class chuc_nang_user extends javax.swing.JFrame {
         jLabel11.setText("Hãy trải nghiệm!!!");
         kGradientPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 10, 190, -1));
 
+        kButton1.setForeground(new java.awt.Color(255, 51, 51));
+        kButton1.setText("Xem vé đã đặt");
+        kButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        kButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kButton1ActionPerformed(evt);
+            }
+        });
+        kGradientPanel1.add(kButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 10, 180, 40));
+
         getContentPane().add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1230, 720));
 
         pack();
@@ -265,6 +281,12 @@ public class chuc_nang_user extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_thor_buttonActionPerformed
 
+    private void kButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kButton1ActionPerformed
+        // TODO add your handling code here:
+        new vedadat().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_kButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -316,6 +338,7 @@ public class chuc_nang_user extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jurrasic_button;
+    private com.k33ptoo.components.KButton kButton1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
     private javax.swing.JButton lightyear_button;
     private javax.swing.JButton maguong_button;

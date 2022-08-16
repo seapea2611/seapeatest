@@ -132,7 +132,9 @@ public class sign_up extends javax.swing.JFrame {
             xacnhan_dangky xndky = new xacnhan_dangky();
             java.sql.Date sqlDate = new java.sql.Date(ngaysinh.getTime());
             InsertMySQL.insertUser(tk, mk, hoten, diachi, sqlDate, sdt);
-            xndky.setVisible(true);}
+            xndky.setVisible(true);
+            dispose();
+        }
         else {
             JOptionPane.showMessageDialog(null, "Hãy kiểm tra lại mật khẩu");
         }

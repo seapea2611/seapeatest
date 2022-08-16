@@ -75,7 +75,7 @@ public class admin extends javax.swing.JFrame {
         getContentPane().add(icon_admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 40, 30));
 
         icon_password.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Bai_tap_lon_java/icon_baitap/passadmin.png"))); // NOI18N
-        getContentPane().add(icon_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 30, 40));
+        getContentPane().add(icon_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 60, 50));
 
         jButton1.setText("Sign in");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +113,7 @@ public class admin extends javax.swing.JFrame {
         passwordInput = matkhau_text.getPassword();
          if((username.equals(userInput)) && (Arrays.equals(password, passwordInput))){
                     JOptionPane.showMessageDialog(null, "Bạn đã nhập chuẩn.");
-                                    
+                    new chuc_nang_admin().setVisible(true);
                     dispose();
                 }
          else {

@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Date;
+import javax.swing.table.DefaultTableModel;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -51,10 +51,90 @@ public class SelectMySQL {
         return ans;
     }
     
+    public static void printUser(javax.swing.JTable table){
+        String sql = "SELECT STT, tai_khoan, ho_ten, dia_chi, ngay_sinh, so_dien_thoai " +"FROM user";
+        try(Connection conn = MySQLJDBCUtil.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            while (rs.next()){
+                String stt = rs.getString("STT");
+                String tk = rs.getString("tai_khoan");
+                String ht = rs.getString("ho_ten");
+                String dc = rs.getString("dia_chi");
+                String ns = rs.getString("ngay_sinh");
+                String sdt = rs.getString("so_dien_thoai");
+                DefaultTableModel model = (DefaultTableModel) table.getModel();
+                model.addRow(new Object[]{stt, tk, ht, dc, ns, sdt});
+            }
+        } catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }  
+    }
+    
+    public static void printAllBookingTicket(javax.swing.JTable table){
+        String sql = "SELECT tai_khoan, ID_phim, ngay_dat, ID_ghe " + "FROM luot_dat_ve"
+                + " ORDER BY ngay_dat ASC";
+        int stt = 0;
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        try(Connection conn = MySQLJDBCUtil.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            while (rs.next()){
+                stt++;
+                String tk = rs.getString("tai_khoan");
+                String id_phim = rs.getString("ID_phim");
+                String nd = rs.getString("ngay_dat");
+                String id_ghe = rs.getString("ID_ghe"); 
+                model.addRow(new Object[]{String.valueOf(stt), tk, id_phim, nd, id_ghe});
+            }
+        } catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }  
+    }
+    
+    public static void printYourBookingTicket(javax.swing.JTable table, String taikhoan) throws SQLException{
+        String sql = "SELECT ID_phim, ngay_dat, ID_ghe " + "FROM luot_dat_ve"
+                + " WHERE tai_khoan = '" + taikhoan + "' ORDER BY ngay_dat ASC";
+        int stt = 0;
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        try(Connection conn = MySQLJDBCUtil.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            while (rs.next()){
+                stt++;
+                String id_phim = rs.getString("ID_phim");
+                String nd = rs.getString("ngay_dat");
+                String id_ghe = rs.getString("ID_ghe");
+                model.addRow(new Object[]{String.valueOf(stt), id_phim, nd, id_ghe});
+            }
+        } catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }  
+    }
+    
+    public static void printTicket(javax.swing.JTable table, String ID_phim) throws SQLException{
+        String sql = "SELECT ID_phim, ngay_dat, ID_ghe " + "FROM luot_dat_ve"
+                + " WHERE ID_phim = '" + ID_phim + "' ORDER BY ngay_dat ASC";
+        int stt = 0;
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        model.setRowCount(0);
+        try(Connection conn = MySQLJDBCUtil.getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            while (rs.next()){
+                stt++;
+                String id_phim = rs.getString("ID_phim");
+                String nd = rs.getString("ngay_dat");
+                String id_ghe = rs.getString("ID_ghe");
+                model.addRow(new Object[]{String.valueOf(stt), id_phim, nd, id_ghe});
+            }
+        } catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }  
+    }
     public static void main(String[] args) throws SQLException{
-        String ngay = "2022-08-12";
-        String ghe = "1";
-        int rs = checkTicket("bp", ghe, ngay);
-        if(rs == 1) System.out.print("Co ghe A1");
+        //JTable table = null;
+        //String tk = "minh123";
+      //printYourBookingTicket(table, tk);
     }
 }

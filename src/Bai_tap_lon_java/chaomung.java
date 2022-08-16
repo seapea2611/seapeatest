@@ -31,7 +31,6 @@ public class chaomung extends javax.swing.JFrame {
         kGradientPanel1 = new com.k33ptoo.components.KGradientPanel();
         jLabel1 = new javax.swing.JLabel();
         user_button = new com.k33ptoo.components.KButton();
-        nhanvien_button = new com.k33ptoo.components.KButton();
         admin_button = new com.k33ptoo.components.KButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -58,15 +57,7 @@ public class chaomung extends javax.swing.JFrame {
                 user_buttonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(user_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
-
-        nhanvien_button.setText("Nhân viên");
-        nhanvien_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nhanvien_buttonActionPerformed(evt);
-            }
-        });
-        kGradientPanel1.add(nhanvien_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, -1, -1));
+        kGradientPanel1.add(user_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 60, -1, -1));
 
         admin_button.setText("Admin");
         admin_button.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +65,7 @@ public class chaomung extends javax.swing.JFrame {
                 admin_buttonActionPerformed(evt);
             }
         });
-        kGradientPanel1.add(admin_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
+        kGradientPanel1.add(admin_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
 
         jPanel1.add(kGradientPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 640, 140));
 
@@ -98,6 +89,7 @@ public class chaomung extends javax.swing.JFrame {
         // TODO add your handling code here:
         admin ad = new admin();
         ad.setVisible(true);
+        dispose();
         
     }//GEN-LAST:event_admin_buttonActionPerformed
 
@@ -105,15 +97,8 @@ public class chaomung extends javax.swing.JFrame {
         // TODO add your handling code here:
         NewJFrame khach = new NewJFrame();
         khach.setVisible(true);
+        dispose();
     }//GEN-LAST:event_user_buttonActionPerformed
-
-    private void nhanvien_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nhanvien_buttonActionPerformed
-        // TODO add your handling code here:
-        nhan_vien nv = new nhan_vien();
-        nv.setVisible(true);
-        setVisible(false);
-        
-    }//GEN-LAST:event_nhanvien_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,7 +141,6 @@ public class chaomung extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private com.k33ptoo.components.KGradientPanel kGradientPanel1;
-    private com.k33ptoo.components.KButton nhanvien_button;
     private com.k33ptoo.components.KButton user_button;
     // End of variables declaration//GEN-END:variables
 }

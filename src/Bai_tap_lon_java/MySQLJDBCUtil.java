@@ -1,4 +1,4 @@
-package ket_noi_sql;
+package Bai_tap_lon_java;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -9,7 +9,6 @@ package ket_noi_sql;
  *
  * @author Hoang Minh
  */
-//import static DataConnection.getConnection;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Connection;
